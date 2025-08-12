@@ -6,8 +6,11 @@ import partlyCloudy from "../assets/PartlyCloudy-Bulk.svg";
 
 export default function Forecast() {
     return (
-        <div className="w-[400px] h-[450px] rounded-xl bg-sky-900/50 p-5 flex flex-col justify-evenly">
-            <p className="text-zinc-100 text-lg font-semibold">Previsões</p>
+        <div className="w-[400px] h-[450px] rounded-xl bg-sky-900/50 p-5 flex flex-col">
+            <div className="mb-5">
+                <p className="text-zinc-100 text-lg font-semibold">Previsões</p>
+                <div className="border border-zinc-300 mt-2"></div>
+            </div>
             <table className="table-auto border-collapse w-full">
                 <tbody>
                     <tr>
