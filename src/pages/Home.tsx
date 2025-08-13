@@ -1,6 +1,7 @@
 import Humidity from "../components/humidity";
 import Forecast from "../components/forecast";
 import WindSpeed from "../components/wind-speed";
+import FeelsLike from "../components/feels-like";
 import SearchInput from "../components/search-input";
 import LocationMap from "../components/location-map";
 import CurrentWeather from "../components/current-weather";
@@ -17,8 +18,11 @@ export default function Home() {
             </div>
             <div className="flex mt-5 mb-10 gap-8">
                 <Forecast />
-                <Humidity />
-                <WindSpeed />
+                <div className="grid grid-cols-2 gap-8">
+                    <Humidity />
+                    <WindSpeed />
+                    <FeelsLike />
+                </div>
             </div>
         </div>
     )
