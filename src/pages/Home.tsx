@@ -1,8 +1,9 @@
+import Humidity from "../components/humidity";
+import Forecast from "../components/forecast";
 import SearchInput from "../components/search-input";
 import LocationMap from "../components/location-map";
 import CurrentWeather from "../components/current-weather";
 import WeatherPopularCities from "../components/weather-popular-cities";
-import Forecast from "../components/forecast";
 
 
 export default function Home() {
@@ -14,8 +15,9 @@ export default function Home() {
                 <LocationMap cordx={-15.82686123202135} cordy={-47.92768564569077} />
                 <WeatherPopularCities />
             </div>
-            <div className="flex mt-5 mb-10">
+            <div className="flex mt-5 mb-10 gap-8">
                 <Forecast />
+                <Humidity />
             </div>
         </div>
     )
