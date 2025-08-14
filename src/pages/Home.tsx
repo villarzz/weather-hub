@@ -1,4 +1,5 @@
-import { useEffect } from "react";
+/* eslint-disable react-hooks/exhaustive-deps */
+import { useEffect, useState } from "react";
 import Sunset from "../components/sunset";
 import Sunrise from "../components/sunrise";
 import UvIndex from "../components/uv-index";
@@ -13,14 +14,39 @@ import CurrentWeather from "../components/current-weather";
 import WeatherPopularCities from "../components/weather-popular-cities";
 
 export default function Home() {
+    const [latitude, setLatitude] = useState(0);
+    const [longitude, setLongitude] = useState(0);
     const { fetchWeather } = useWeather();
 
     useEffect(() => {
-        // Coordenadas para Brasília como exemplo inicial
-        const initialLat = -15.82686123202135;
-        const initialLon = -47.92768564569077;
-        fetchWeather(initialLat, initialLon);
-    }, []);
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(
+            (position) => {
+              const lat = position.coords.latitude;
+              const lon = position.coords.longitude;
+      
+              setLatitude(lat);
+              setLongitude(lon);
+              fetchWeather(lat, lon); // usa os valores diretamente
+            },
+            (error) => {
+              console.error("Erro ao obter a localização:", error.message);
+              const initialLat = -15.793899495216163;
+              const initialLon = -47.88274564270632;
+              setLatitude(initialLat);
+              setLongitude(initialLon);
+              fetchWeather(initialLat, initialLon);
+            }
+          );
+        } else {
+          console.error("Geolocalização não é suportada por este navegador.");
+          const initialLat = -15.82686123202135;
+          const initialLon = -47.92768564569077;
+          setLatitude(initialLat);
+          setLongitude(initialLon);
+          fetchWeather(initialLat, initialLon);
+        }
+      }, []);
 
     return (
         <div className="pt-8 px-16 flex flex-col">
@@ -30,7 +56,7 @@ export default function Home() {
                     <CurrentWeather />
                 </div>
                 <div className="col-span-4">
-                    <LocationMap cordx={-15.82686123202135} cordy={-47.92768564569077} />
+                    <LocationMap cordx={latitude} cordy={longitude} />
                 </div>
                 <div className="col-span-3">
                     <WeatherPopularCities />
