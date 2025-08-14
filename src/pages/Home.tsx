@@ -1,3 +1,4 @@
+import Sunrise from "../components/sunrise";
 import UvIndex from "../components/uv-index";
 import Humidity from "../components/humidity";
 import Forecast from "../components/forecast";
@@ -25,6 +26,7 @@ export default function Home() {
                     <FeelsLike />
                     <UvIndex />
                 </div>
+                <Sunrise />
             </div>
         </div>
     )
