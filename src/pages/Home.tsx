@@ -1,3 +1,4 @@
+import Sunset from "../components/sunset";
 import Sunrise from "../components/sunrise";
 import UvIndex from "../components/uv-index";
 import Humidity from "../components/humidity";
@@ -11,22 +12,35 @@ import WeatherPopularCities from "../components/weather-popular-cities";
 
 export default function Home() {
     return (
-        <div className="pt-8 pl-16 flex flex-col">
+        <div className="pt-8 px-16 flex flex-col">
             <SearchInput />
-            <div className="mt-10 flex gap-8">
-                <CurrentWeather />
-                <LocationMap cordx={-15.82686123202135} cordy={-47.92768564569077} />
-                <WeatherPopularCities />
+            <div className="mt-10 grid grid-cols-9 gap-8">
+                <div className="col-span-2">
+                    <CurrentWeather />
+                </div>
+                <div className="col-span-4">
+                    <LocationMap cordx={-15.82686123202135} cordy={-47.92768564569077} />
+                </div>
+                <div className="col-span-3">
+                    <WeatherPopularCities />
+                </div>
             </div>
-            <div className="flex mt-5 mb-10 gap-8">
-                <Forecast />
-                <div className="grid grid-cols-2 gap-8">
+            <div className="grid grid-cols-9 my-8 gap-8">
+                <div className="col-span-2">
+                    <Forecast />
+                </div>
+                <div className="col-span-2 flex flex-col gap-8">
                     <Humidity />
                     <WindSpeed />
+                </div>
+                <div className="col-span-2 flex flex-col gap-8">
                     <FeelsLike />
                     <UvIndex />
                 </div>
-                <Sunrise />
+                <div className="col-span-3 flex flex-col gap-8">
+                    <Sunrise />
+                    <Sunset />
+                </div>
             </div>
         </div>
     )
