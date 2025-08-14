@@ -1,3 +1,4 @@
+import UvIndex from "../components/uv-index";
 import Humidity from "../components/humidity";
 import Forecast from "../components/forecast";
 import WindSpeed from "../components/wind-speed";
@@ -22,6 +23,7 @@ export default function Home() {
                     <Humidity />
                     <WindSpeed />
                     <FeelsLike />
+                    <UvIndex />
                 </div>
             </div>
         </div>
