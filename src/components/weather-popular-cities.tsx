@@ -6,7 +6,7 @@ import partlyCloudy from "../assets/PartlyCloudy-Bulk.svg";
 
 export default function WeatherPopularCities() {
     return (
-        <div className="w-[450px] h-[400px] rounded-xl bg-sky-900/50 p-6">
+        <div className=" h-[400px] rounded-xl bg-sky-900/50 p-6">
             <p className="font-bold text-zinc-200 text-xl tracking-wide ml-1">Cidades Populares</p>
             <div className="border border-zinc-300 my-1"></div>
             <div className="overflow-x-auto ">

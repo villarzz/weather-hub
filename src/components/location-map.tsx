@@ -5,7 +5,7 @@ export default function LocationMap({cordx, cordy}: {cordx: number, cordy: numbe
     const hyderabadCoords: [number, number] = [cordx, cordy];
 
     return (
-        <div className="bg-white/10 backdrop-blur-lg rounded-xl overflow-hidden shadow-lg p-0 h-[400px] w-[700px]">
+        <div className="bg-white/10 backdrop-blur-lg rounded-xl overflow-hidden shadow-lg p-0 h-[400px] w-full">
             <MapContainer
                 center={hyderabadCoords}
                 zoom={14}

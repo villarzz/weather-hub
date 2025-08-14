@@ -2,7 +2,7 @@ import uv from "../assets/uv.png";
 
 export default function UvIndex() {
     return (
-        <div className="w-[334px] h-[209px] rounded-xl bg-sky-900/50 p-5 flex flex-col items-start space-x-4">
+        <div className="h-[209px] rounded-xl bg-sky-900/50 p-5 flex flex-col items-start space-x-4">
             <div className="flex gap-5 items-center">
                 <img src={uv} alt="Ícone de umidade" className="w-16 h-16 flex-shrink-0" />
                 <span>
