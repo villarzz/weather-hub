@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import Sunset from "../components/sunset";
 import Sunrise from "../components/sunrise";
 import UvIndex from "../components/uv-index";
@@ -7,10 +8,20 @@ import WindSpeed from "../components/wind-speed";
 import FeelsLike from "../components/feels-like";
 import SearchInput from "../components/search-input";
 import LocationMap from "../components/location-map";
+import { useWeather } from "../context/WeatherProvider";
 import CurrentWeather from "../components/current-weather";
 import WeatherPopularCities from "../components/weather-popular-cities";
 
 export default function Home() {
+    const { fetchWeather } = useWeather();
+
+    useEffect(() => {
+        // Coordenadas para Brasília como exemplo inicial
+        const initialLat = -15.82686123202135;
+        const initialLon = -47.92768564569077;
+        fetchWeather(initialLat, initialLon);
+    }, []);
+
     return (
         <div className="pt-8 px-16 flex flex-col">
             <SearchInput />
