@@ -1,4 +1,4 @@
-import uv from "../assets/uv.png";
+import uv from "../../public/assets/uv.png";
 
 export default function UvIndex() {
     return (

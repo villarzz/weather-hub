@@ -1,10 +1,10 @@
 import { LuWind } from "react-icons/lu";
-import Sunny from "../assets/Sunny.svg";
-import Rainy from "../assets/Rainy.svg";
-import Snowy from "../assets/Snowy.svg";
 import { IoWaterOutline } from "react-icons/io5";
-import RainThunder from "../assets/RainThunder.svg";
-import PartlyCloudy from "../assets/PartlyCloudy.svg";
+import PartlyCloudy from "../../public/assets/PartlyCloudy.svg";
+import Rainy from "../../public/assets/Rainy.svg";
+import RainThunder from "../../public/assets/RainThunder.svg";
+import Snowy from "../../public/assets/Snowy.svg";
+import Sunny from "../../public/assets/Sunny.svg";
 import { useWeather } from "../context/WeatherProvider";
 
 export default function CurrentWeather() {

@@ -1,8 +1,8 @@
-import rainy from "../assets/Rainy-Bulk.svg";
-import snowy from "../assets/Snowy-Bulk.svg";
-import sunny from "../assets/Sunny-Bulk.svg";
-import rainThunder from "../assets/RainThunder-Bulk.svg";
-import partlyCloudy from "../assets/PartlyCloudy-Bulk.svg";
+import rainy from "../../public/assets/Rainy-Bulk.svg";
+import snowy from "../../public/assets/Snowy-Bulk.svg";
+import sunny from "../../public/assets/Sunny-Bulk.svg";
+import rainThunder from "../../public/assets/RainThunder-Bulk.svg";
+import partlyCloudy from "../../public/assets/PartlyCloudy-Bulk.svg";
 
 export default function Forecast() {
     return (

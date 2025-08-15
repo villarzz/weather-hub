@@ -1,4 +1,4 @@
-import humidity from "../assets/humidity.png";
+import humidity from "../../public/assets/humidity.png";
 
 export default function Humidity() {
     return (

@@ -1,4 +1,4 @@
-import sunset from "../assets/sunset.png";
+import sunset from "../../public/assets/sunset.png";
 
 export default function Sunset() {
     return (

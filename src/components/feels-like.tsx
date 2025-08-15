@@ -1,4 +1,4 @@
-import thermometer from "../assets/atmospheric-conditions.png";
+import thermometer from "../../public/assets/atmospheric-conditions.png"
 
 export default function FeelsLike() {
     return (

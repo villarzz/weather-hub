@@ -1,4 +1,4 @@
-import sunrise from "../assets/sunrise.png";
+import sunrise from "../../public/assets/sunrise.png";
 
 export default function Sunrise() {
     return (

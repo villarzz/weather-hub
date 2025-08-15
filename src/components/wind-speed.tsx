@@ -1,4 +1,4 @@
-import windSpeed from "../assets/storm.png";
+import windSpeed from "../../public/assets/storm.png";
 
 export default function WindSpeed() {
     return (
