@@ -4,9 +4,15 @@ import { createContext, type ReactNode, useState, useContext } from "react";
 import type { WeatherData } from "../interfaces/WeatherData";
 
 interface WeatherContextType {
-    weatherData: WeatherData | null;
     loading: boolean;
     error: string | null;
+    nyWeather: WeatherData | null;
+    rioWeather: WeatherData | null;
+    weatherData: WeatherData | null;
+    tokyoWeather: WeatherData | null;
+    parisWeather: WeatherData | null;
+    londonWeather: WeatherData | null;
+    fetchWeatherPopularCities: () => Promise<void>;
     fetchWeather: (lat: number, lon: number) => Promise<void>;
 }
 
@@ -20,7 +26,13 @@ interface WeatherProviderProps {
 export const WeatherProvider = ({ children }: WeatherProviderProps) => {
     const [loading, setLoading] = useState<boolean>(false);
     const [error, setError] = useState<string | null>(null);
+    const [nyWeather, setNyWeather] = useState<WeatherData | null>(null);
+    const [rioWeather, setRioWeather] = useState<WeatherData | null>(null);
     const [weatherData, setWeatherData] = useState<WeatherData | null>(null);
+    const [parisWeather, setParisWeather] = useState<WeatherData | null>(null);
+    const [tokyoWeather, setTokyoWeather] = useState<WeatherData | null>(null);
+    const [londonWeather, setLondonWeather] = useState<WeatherData | null>(null);
+
 
     // Função que fará as requisições
     const fetchWeather = async (lat: number, lon: number) => {
@@ -43,11 +55,52 @@ export const WeatherProvider = ({ children }: WeatherProviderProps) => {
         }
     };
 
+    const fetchWeatherPopularCities = async () => {
+        setLoading(true);
+        setError(null);
+
+        // Lista de cidades
+        const cities = [
+            { name: "Nova York", setter: setNyWeather },
+            { name: "Paris", setter: setParisWeather },
+            { name: "Tóquio", setter: setTokyoWeather },
+            { name: "Londres", setter: setLondonWeather },
+            { name: "Rio de Janeiro", setter: setRioWeather }
+        ];
+
+        try {
+            await Promise.all(
+                cities.map(async ({ name, setter }) => {
+                    const response = await fetch(
+                        `https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${encodeURIComponent(name)}&lang=pt`
+                    );
+
+                    if (!response.ok) {
+                        throw new Error(`Falha ao buscar dados do tempo para ${name}`);
+                    }
+
+                    const completeWeatherData: WeatherData = await response.json();
+                    setter(completeWeatherData);
+                })
+            );
+        } catch (err: any) {
+            setError(err.message);
+        } finally {
+            setLoading(false);
+        }
+    };
+
     const value = {
-        weatherData,
-        loading,
         error,
+        loading,
+        nyWeather,
+        rioWeather,
+        weatherData,
+        tokyoWeather,
+        parisWeather,
         fetchWeather,
+        londonWeather,
+        fetchWeatherPopularCities,
     };
 
     return <WeatherContext.Provider value={value}>{children}</WeatherContext.Provider>;
