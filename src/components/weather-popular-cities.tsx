@@ -17,7 +17,7 @@ export default function WeatherPopularCities() {
 
     if (loading || !nyWeather || !rioWeather || !tokyoWeather || !parisWeather || !londonWeather) {
         return (
-            <div className="h-[400px] rounded-xl bg-sky-900/50 animate-pulse" />
+            <div className="h-[400px] rounded-xl bg-sky-900/50 animate-pulse p-6" />
         )
     }
 
