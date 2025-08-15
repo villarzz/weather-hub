@@ -1,4 +1,5 @@
 import { LuWind } from "react-icons/lu";
+import { formatarData } from "../utils/utils";
 import { IoWaterOutline } from "react-icons/io5";
 import Rainy from "../../public/assets/Rainy.svg";
 import Snowy from "../../public/assets/Snowy.svg";
@@ -14,13 +15,6 @@ export default function CurrentWeather() {
         return (
             <div className="h-[400px] rounded-xl bg-sky-900/50 animate-pulse" />
         )
-    }
-
-    function formatarData(dataStr: string): string {
-        const [data, hora] = dataStr.split(" ");
-        const [ano, mes, dia] = data.split("-");
-
-        return `${dia}/${mes}/${ano} ${hora}`;
     }
 
     const conditionIcons: Record<string, string> = {
