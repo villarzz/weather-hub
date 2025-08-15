@@ -27,7 +27,7 @@ export const WeatherProvider = ({ children }: WeatherProviderProps) => {
         setLoading(true);
         setError(null);
         try {
-            const response = await fetch(`http://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${lat},${lon}&days=5&aqi=no&alerts=no&lang=pt`);
+            const response = await fetch(`https://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${lat},${lon}&days=5&aqi=no&alerts=no&lang=pt`);
 
             if (!response.ok) {
                 throw new Error('Falha ao buscar dados do tempo.');
