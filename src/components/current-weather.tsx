@@ -1,11 +1,11 @@
 import { LuWind } from "react-icons/lu";
 import { IoWaterOutline } from "react-icons/io5";
-import PartlyCloudy from "../../public/assets/PartlyCloudy.svg";
 import Rainy from "../../public/assets/Rainy.svg";
-import RainThunder from "../../public/assets/RainThunder.svg";
 import Snowy from "../../public/assets/Snowy.svg";
 import Sunny from "../../public/assets/Sunny.svg";
 import { useWeather } from "../context/WeatherProvider";
+import RainThunder from "../../public/assets/RainThunder.svg";
+import PartlyCloudy from "../../public/assets/PartlyCloudy.svg";
 
 export default function CurrentWeather() {
     const { loading, weatherData } = useWeather();
@@ -25,7 +25,7 @@ export default function CurrentWeather() {
 
     const conditionIcons: Record<string, string> = {
         "Parcialmente nublado": PartlyCloudy,
-        "Sunny": Sunny,
+        "Sol": Sunny,
         "Rain": Rainy,
         "Snowy": Snowy,
         "RainThunder": RainThunder
@@ -39,8 +39,8 @@ export default function CurrentWeather() {
                 <p className="font-bold text-zinc-200 text-xl tracking-wide">Clima Atual</p>
                 <p className="text-zinc-200">{formatarData(weatherData.location.localtime)}</p>
             </div>
-            <div className="flex items-centers gap-9">
-                <img src={weatherIcon} alt="" width={150} className="ml-2" />
+            <div className="flex items-center gap-9">
+                <img src={weatherIcon} alt="teste" width={150} className="ml-2" />
                 <div className="flex flex-col text-center items-center">
                     <div className="flex">
                         <p className="text-8xl font-semibold text-zinc-100 leading-none">
