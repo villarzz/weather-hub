@@ -4,7 +4,7 @@ import Sunny from "../../public/assets/Sunny-Bulk.svg";
 import { useWeather } from "../context/WeatherProvider";
 import RainThunder from "../../public/assets/RainThunder-Bulk.svg";
 import PartlyCloudy from "../../public/assets/PartlyCloudy-Bulk.svg";
-import { formatarData } from "../utils/utils";
+import { formatarDataEHora } from "../utils/utils";
 
 export default function Forecast() {
     const { loading, weatherData } = useWeather();
@@ -44,27 +44,27 @@ export default function Forecast() {
                     <tr>
                         <td className="p-2"><img src={weatherIconDayOne} width={50} /></td>
                         <td className="text-zinc-100 p-2">{Math.floor(weatherData.forecast.forecastday[0].day.maxtemp_c)}°/{Math.floor(weatherData.forecast.forecastday[0].day.mintemp_c)}°</td>
-                        <td className="text-zinc-100 p-2 whitespace-nowrap text-center">{formatarData(weatherData.forecast.forecastday[0].date)}</td>
+                        <td className="text-zinc-100 p-2 whitespace-nowrap text-center">{formatarDataEHora(weatherData.forecast.forecastday[0].date)}</td>
                     </tr>
                     <tr>
                         <td className="text-zinc-100 p-2"><img src={weatherIconDayTwo} width={50} /></td>
                         <td className="text-zinc-100 p-2">{Math.floor(weatherData.forecast.forecastday[1].day.maxtemp_c)}°/{Math.floor(weatherData.forecast.forecastday[1].day.mintemp_c)}°</td>
-                        <td className="text-zinc-100 p-2 whitespace-nowrap text-center">{formatarData(weatherData.forecast.forecastday[1].date)}</td>
+                        <td className="text-zinc-100 p-2 whitespace-nowrap text-center">{formatarDataEHora(weatherData.forecast.forecastday[1].date)}</td>
                     </tr>
                     <tr>
                         <td className="text-zinc-100 p-2"><img src={weatherIconDayTheree} width={50} /></td>
                         <td className="text-zinc-100 p-2">{Math.floor(weatherData.forecast.forecastday[2].day.maxtemp_c)}°/{Math.floor(weatherData.forecast.forecastday[2].day.mintemp_c)}°</td>
-                        <td className="text-zinc-100 p-2 whitespace-nowrap text-center">{formatarData(weatherData.forecast.forecastday[2].date)}</td>
+                        <td className="text-zinc-100 p-2 whitespace-nowrap text-center">{formatarDataEHora(weatherData.forecast.forecastday[2].date)}</td>
                     </tr>
                     <tr>
                         <td className="text-zinc-100 p-2"><img src={weatherIconDayFour} width={50} /></td>
                         <td className="text-zinc-100 p-2">{Math.floor(weatherData.forecast.forecastday[3].day.maxtemp_c)}°/{Math.floor(weatherData.forecast.forecastday[3].day.mintemp_c)}°</td>
-                        <td className="text-zinc-100 p-2 whitespace-nowrap text-center">{formatarData(weatherData.forecast.forecastday[3].date)}</td>
+                        <td className="text-zinc-100 p-2 whitespace-nowrap text-center">{formatarDataEHora(weatherData.forecast.forecastday[3].date)}</td>
                     </tr>
                     <tr>
                         <td className="text-zinc-100 p-2"><img src={weatherIconDayFive} width={50} /></td>
                         <td className="text-zinc-100 p-2">{Math.floor(weatherData.forecast.forecastday[4].day.maxtemp_c)}°/{Math.floor(weatherData.forecast.forecastday[4].day.mintemp_c)}°</td>
-                        <td className="text-zinc-100 p-2 whitespace-nowrap text-center">{formatarData(weatherData.forecast.forecastday[4].date)}</td>
+                        <td className="text-zinc-100 p-2 whitespace-nowrap text-center">{formatarDataEHora(weatherData.forecast.forecastday[4].date)}</td>
                     </tr>
                 </tbody>
             </table>

@@ -1,5 +1,5 @@
 import { LuWind } from "react-icons/lu";
-import { formatarData } from "../utils/utils";
+import { formatarDataEHora } from "../utils/utils";
 import { IoWaterOutline } from "react-icons/io5";
 import Rainy from "../../public/assets/Rainy.svg";
 import Snowy from "../../public/assets/Snowy.svg";
@@ -31,7 +31,7 @@ export default function CurrentWeather() {
         <div className="h-[400px] rounded-xl bg-sky-900/50 flex flex-col justify-evenly">
             <div className="pl-4">
                 <p className="font-bold text-zinc-200 text-xl tracking-wide">Clima Atual</p>
-                <p className="text-zinc-200">{formatarData(weatherData.location.localtime)}</p>
+                <p className="text-zinc-200">{formatarDataEHora(weatherData.location.localtime)}</p>
             </div>
             <div className="flex items-center gap-9">
                 <img src={weatherIcon} alt="teste" width={150} className="ml-2" />
