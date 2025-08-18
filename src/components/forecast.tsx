@@ -17,8 +17,12 @@ export default function Forecast() {
 
     const conditionIcons: Record<string, string> = {
         "Parcialmente nublado": PartlyCloudy,
+        "Encoberto": PartlyCloudy,
+        "Possibilidade de chuva irregular": PartlyCloudy,
         "Sol": Sunny,
         "Rain": Rainy,
+        "Chuva moderada": Rainy,
+        "Chuva forte": Rainy,
         "Snowy": Snowy,
         "RainThunder": RainThunder
     };

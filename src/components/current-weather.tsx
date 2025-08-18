@@ -19,6 +19,8 @@ export default function CurrentWeather() {
 
     const conditionIcons: Record<string, string> = {
         "Parcialmente nublado": PartlyCloudy,
+        "Encoberto": PartlyCloudy,
+        "Nevoeiro": PartlyCloudy,
         "Sol": Sunny,
         "Rain": Rainy,
         "Snowy": Snowy,
