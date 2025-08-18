@@ -21,8 +21,11 @@ export default function CurrentWeather() {
         "Parcialmente nublado": PartlyCloudy,
         "Encoberto": PartlyCloudy,
         "Nevoeiro": PartlyCloudy,
+        "Nublado": PartlyCloudy,
+        "Neblina": PartlyCloudy,
         "Sol": Sunny,
         "Rain": Rainy,
+        "Possibilidade de chuva irregular": Rainy,
         "Snowy": Snowy,
         "RainThunder": RainThunder
     };
