@@ -1,10 +1,10 @@
+import { formatarDataEHora } from "../utils/utils";
 import Rainy from "../../public/assets/Rainy-Bulk.svg";
 import Snowy from "../../public/assets/Snowy-Bulk.svg";
 import Sunny from "../../public/assets/Sunny-Bulk.svg";
 import { useWeather } from "../context/WeatherProvider";
 import RainThunder from "../../public/assets/RainThunder-Bulk.svg";
 import PartlyCloudy from "../../public/assets/PartlyCloudy-Bulk.svg";
-import { formatarDataEHora } from "../utils/utils";
 
 export default function Forecast() {
     const { loading, weatherData } = useWeather();
@@ -41,7 +41,7 @@ export default function Forecast() {
         <div className="h-[450px] rounded-xl bg-sky-900/50 p-5 flex flex-col">
             <div className="mb-5">
                 <p className="text-zinc-100 text-lg font-semibold">Previsões</p>
-                <div className="border border-zinc-300 mt-2"></div>
+                <div className="border border-zinc-100/50 mt-2"></div>
             </div>
             <table className="table-auto border-collapse w-full">
                 <tbody>
