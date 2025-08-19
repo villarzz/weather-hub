@@ -56,7 +56,7 @@ export default function WeatherPopularCities() {
                             />
                             <span className="text-zinc-100">Nova York</span>
                         </div>
-                        <span className="text-zinc-100 text-sm whitespace-nowrap">
+                        <span className="text-zinc-100 text-sm truncate text-right">
                             {nyWeather.current.condition.text}
                         </span>
                     </li>
@@ -70,7 +70,7 @@ export default function WeatherPopularCities() {
                             />
                             <span className="text-zinc-100">Paris</span>
                         </div>
-                        <span className="text-zinc-100 text-sm whitespace-nowrap">
+                        <span className="text-zinc-100 text-sm truncate text-right">
                             {parisWeather.current.condition.text}
                         </span>
                     </li>
@@ -84,7 +84,7 @@ export default function WeatherPopularCities() {
                             />
                             <span className="text-zinc-100">Tóquio</span>
                         </div>
-                        <span className="text-zinc-100 text-sm whitespace-nowrap">
+                        <span className="text-zinc-100 text-sm truncate text-right">
                             {tokyoWeather.current.condition.text}
                         </span>
                     </li>
@@ -98,7 +98,7 @@ export default function WeatherPopularCities() {
                             />
                             <span className="text-zinc-100">Londres</span>
                         </div>
-                        <span className="text-zinc-100 text-sm whitespace-nowrap">
+                        <span className="text-zinc-100 text-sm truncate text-right">
                             {londonWeather.current.condition.text}
                         </span>
                     </li>
@@ -112,12 +112,11 @@ export default function WeatherPopularCities() {
                             />
                             <span className="text-zinc-100">Rio de Janeiro</span>
                         </div>
-                        <span className="text-zinc-100 text-sm whitespace-nowrap">
+                        <span className="text-zinc-100 text-sm truncate text-right">
                             {rioWeather.current.condition.text}
                         </span>
                     </li>
                 </ul>
-
             </div>
         </div>
     )
