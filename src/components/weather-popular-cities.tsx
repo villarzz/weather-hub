@@ -25,6 +25,7 @@ export default function WeatherPopularCities() {
         "Parcialmente nublado": partlyCloudy,
         "Possibilidade de chuva irregular": partlyCloudy,
         "Sol": sunny,
+        "Céu limpo": sunny,
         "Rain": rainy,
         "Snowy": snowy,
         "RainThunder": rainThunder
