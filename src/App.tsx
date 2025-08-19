@@ -1,4 +1,5 @@
 import Home from "./pages/Home";
+import Footer from "./components/footer";
 import { WeatherProvider } from "./context/WeatherProvider";
 
 export default function App() {
@@ -7,6 +8,7 @@ export default function App() {
       <WeatherProvider>
         <Home />
       </WeatherProvider>
+      <Footer />
     </div>
   );
 }
