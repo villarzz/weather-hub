@@ -36,7 +36,10 @@ export default function CurrentWeather() {
         <div className="h-[400px] rounded-xl bg-sky-900/50 flex flex-col justify-evenly">
             <div className="pl-4">
                 <p className="font-bold text-zinc-200 text-xl tracking-wide">Clima Atual</p>
-                <p className="text-zinc-200">{formatarDataEHora(weatherData.location.localtime)}</p>
+                <p className="text-zinc-200">Dados Atualizados:&nbsp;
+                    <span className="font-semibold">
+                        {formatarDataEHora(weatherData.current.last_updated)}
+                    </span></p>
             </div>
             <div className="flex items-center gap-9">
                 <img src={weatherIcon} alt="teste" width={150} className="ml-2" />
