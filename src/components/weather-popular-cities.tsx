@@ -42,39 +42,82 @@ export default function WeatherPopularCities() {
     const londonWeatherIcon = conditionIcons[londonWeatherConditionText];
 
     return (
-        <div className=" h-[400px] rounded-xl bg-sky-900/50 p-6">
+        <div className="h-[400px] rounded-xl bg-sky-900/50 p-6">
             <p className="font-bold text-zinc-200 text-xl tracking-wide ml-1">Cidades Populares</p>
             <div className="border border-zinc-100/50 my-1"></div>
-            <div className="overflow-x-auto ">
-                <table className="table-auto border-collapse w-full">
-                    <tbody>
-                        <tr>
-                            <td className="p-2"><img src={nyWeatherIcon} width={50} /></td>
-                            <td className="text-zinc-100 p-2">Nova York</td>
-                            <td className="text-zinc-100 text-sm p-2 whitespace-nowrap text-right">{nyWeather.current.condition.text}</td>
-                        </tr>
-                        <tr>
-                            <td className="text-zinc-100 p-2"><img src={parisWeatherIcon} width={50} /></td>
-                            <td className="text-zinc-100 p-2">Paris</td>
-                            <td className="text-zinc-100 text-sm p-2 whitespace-nowrap text-right">{parisWeather.current.condition.text}</td>
-                        </tr>
-                        <tr>
-                            <td className="text-zinc-100 p-2"><img src={tokyoWeatherIcon} width={50} /></td>
-                            <td className="text-zinc-100 p-2">Tóquio</td>
-                            <td className="text-zinc-100 text-sm p-2 whitespace-nowrap text-right">{tokyoWeather.current.condition.text}</td>
-                        </tr>
-                        <tr>
-                            <td className="text-zinc-100 p-2"><img src={londonWeatherIcon} width={50} /></td>
-                            <td className="text-zinc-100 p-2">Londres</td>
-                            <td className="text-zinc-100 text-sm p-2 whitespace-nowrap text-right">{londonWeather.current.condition.text}</td>
-                        </tr>
-                        <tr>
-                            <td className="text-zinc-100 p-2"><img src={rioWeatherIcon} width={50} /></td>
-                            <td className="text-zinc-100 p-2">Rio de Janeiro</td>
-                            <td className="text-zinc-100 text-sm p-2 whitespace-nowrap text-right">{rioWeather.current.condition.text}</td>
-                        </tr>
-                    </tbody>
-                </table>
+            <div className="overflow-x-auto h-full">
+                <ul className="divide-y divide-zinc-100/20 h-5/6 flex flex-col justify-evenly">
+                    <li className="flex items-center justify-between p-2">
+                        <div className="flex items-center gap-3">
+                            <img
+                                src={nyWeatherIcon}
+                                className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 object-contain"
+                                alt="Clima Nova York"
+                            />
+                            <span className="text-zinc-100">Nova York</span>
+                        </div>
+                        <span className="text-zinc-100 text-sm whitespace-nowrap">
+                            {nyWeather.current.condition.text}
+                        </span>
+                    </li>
+
+                    <li className="flex items-center justify-between p-2">
+                        <div className="flex items-center gap-3">
+                            <img
+                                src={parisWeatherIcon}
+                                className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 object-contain"
+                                alt="Clima Paris"
+                            />
+                            <span className="text-zinc-100">Paris</span>
+                        </div>
+                        <span className="text-zinc-100 text-sm whitespace-nowrap">
+                            {parisWeather.current.condition.text}
+                        </span>
+                    </li>
+
+                    <li className="flex items-center justify-between p-2">
+                        <div className="flex items-center gap-3">
+                            <img
+                                src={tokyoWeatherIcon}
+                                className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 object-contain"
+                                alt="Clima Tóquio"
+                            />
+                            <span className="text-zinc-100">Tóquio</span>
+                        </div>
+                        <span className="text-zinc-100 text-sm whitespace-nowrap">
+                            {tokyoWeather.current.condition.text}
+                        </span>
+                    </li>
+
+                    <li className="flex items-center justify-between p-2">
+                        <div className="flex items-center gap-3">
+                            <img
+                                src={londonWeatherIcon}
+                                className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 object-contain"
+                                alt="Clima Londres"
+                            />
+                            <span className="text-zinc-100">Londres</span>
+                        </div>
+                        <span className="text-zinc-100 text-sm whitespace-nowrap">
+                            {londonWeather.current.condition.text}
+                        </span>
+                    </li>
+
+                    <li className="flex items-center justify-between p-2">
+                        <div className="flex items-center gap-3">
+                            <img
+                                src={rioWeatherIcon}
+                                className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 object-contain"
+                                alt="Clima Rio de Janeiro"
+                            />
+                            <span className="text-zinc-100">Rio de Janeiro</span>
+                        </div>
+                        <span className="text-zinc-100 text-sm whitespace-nowrap">
+                            {rioWeather.current.condition.text}
+                        </span>
+                    </li>
+                </ul>
+
             </div>
         </div>
     )
