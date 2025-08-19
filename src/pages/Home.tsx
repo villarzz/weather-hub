@@ -63,40 +63,46 @@ export default function Home() {
     }
 
     return (
-        <div className="pt-8 px-16 flex flex-col">
-            <div className="grid grid-cols-9 gap-8">
-                <div className="col-span-2">
-                    <SearchInput onSelect={(lat, lon) => handleSelectedCity(lat, lon)} onViewOwnLocation={fetchInitialWeather} />
+        <div className="pt-8 px-4 md:px-8 lg:px-16 flex flex-col">
+            <div className="grid grid-cols-1 md:grid-cols-9 gap-8">
+                <div className="col-span-1 md:col-span-2">
+                    <SearchInput
+                        onSelect={(lat, lon) => handleSelectedCity(lat, lon)}
+                        onViewOwnLocation={fetchInitialWeather}
+                    />
                 </div>
             </div>
-            <div className="mt-10 grid grid-cols-9 gap-8">
-                <div className="col-span-2">
+
+            <div className="mt-10 grid grid-cols-1 md:grid-cols-9 gap-8">
+                <div className="col-span-1 md:col-span-2">
                     <CurrentWeather />
                 </div>
-                <div className="col-span-4">
+                <div className="col-span-1 md:col-span-4 order-2 md:order-none">
                     <LocationMap cordx={latitude} cordy={longitude} />
                 </div>
-                <div className="col-span-3">
+                <div className="col-span-1 md:col-span-3 order-1 md:order-none">
                     <WeatherPopularCities />
                 </div>
             </div>
-            <div className="grid grid-cols-9 my-8 gap-8">
-                <div className="col-span-2">
+
+            <div className="grid grid-cols-1 md:grid-cols-9 my-8 gap-8">
+                <div className="col-span-1 md:col-span-2">
                     <Forecast />
                 </div>
-                <div className="col-span-2 flex flex-col gap-8">
+                <div className="col-span-1 md:col-span-2 flex flex-col gap-8">
                     <Humidity />
                     <WindSpeed />
                 </div>
-                <div className="col-span-2 flex flex-col gap-8">
+                <div className="col-span-1 md:col-span-2 flex flex-col gap-8">
                     <FeelsLike />
                     <UvIndex />
                 </div>
-                <div className="col-span-3 flex flex-col gap-8">
+                <div className="col-span-1 md:col-span-3 flex flex-col gap-8">
                     <Sunrise />
                     <Sunset />
                 </div>
             </div>
         </div>
+
     )
 }
