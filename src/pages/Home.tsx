@@ -20,37 +20,41 @@ export default function Home() {
 
     useEffect(() => {
         if (latitude === 0 && longitude === 0) {
-            if (navigator.geolocation) {
-                navigator.geolocation.getCurrentPosition(
-                    (position) => {
-                        const lat = position.coords.latitude;
-                        const lon = position.coords.longitude;
-
-                        setLatitude(lat);
-                        setLongitude(lon);
-                        fetchWeather(lat, lon);
-                    },
-                    (error) => {
-                        console.error("Erro ao obter a localização:", error.message);
-                        const initialLat = -15.793899495216163;
-                        const initialLon = -47.88274564270632;
-                        setLatitude(initialLat);
-                        setLongitude(initialLon);
-                        fetchWeather(initialLat, initialLon);
-                    }
-                );
-            } else {
-                console.error("Geolocalização não é suportada por este navegador.");
-                const initialLat = -15.82686123202135;
-                const initialLon = -47.92768564569077;
-                setLatitude(initialLat);
-                setLongitude(initialLon);
-                fetchWeather(initialLat, initialLon);
-            }
+            fetchInitialWeather();
         } else {
             fetchWeather(latitude, longitude);
         }
     }, []);
+
+    function fetchInitialWeather() {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(
+                (position) => {
+                    const lat = position.coords.latitude;
+                    const lon = position.coords.longitude;
+
+                    setLatitude(lat);
+                    setLongitude(lon);
+                    fetchWeather(lat, lon);
+                },
+                (error) => {
+                    console.error("Erro ao obter a localização:", error.message);
+                    const initialLat = -15.793899495216163;
+                    const initialLon = -47.88274564270632;
+                    setLatitude(initialLat);
+                    setLongitude(initialLon);
+                    fetchWeather(initialLat, initialLon);
+                }
+            );
+        } else {
+            console.error("Geolocalização não é suportada por este navegador.");
+            const initialLat = -15.82686123202135;
+            const initialLon = -47.92768564569077;
+            setLatitude(initialLat);
+            setLongitude(initialLon);
+            fetchWeather(initialLat, initialLon);
+        }
+    }
 
     function handleSelectedCity(lat: number, lon: number) {
         setLatitude(lat);
@@ -60,7 +64,11 @@ export default function Home() {
 
     return (
         <div className="pt-8 px-16 flex flex-col">
-            <SearchInput onSelect={(lat, lon) => handleSelectedCity(lat, lon)} />
+            <div className="grid grid-cols-9 gap-8">
+                <div className="col-span-2">
+                    <SearchInput onSelect={(lat, lon) => handleSelectedCity(lat, lon)} onViewOwnLocation={fetchInitialWeather} />
+                </div>
+            </div>
             <div className="mt-10 grid grid-cols-9 gap-8">
                 <div className="col-span-2">
                     <CurrentWeather />
