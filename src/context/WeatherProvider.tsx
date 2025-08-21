@@ -72,7 +72,7 @@ export const WeatherProvider = ({ children }: WeatherProviderProps) => {
             await Promise.all(
                 cities.map(async ({ name, setter }) => {
                     const response = await fetch(
-                        `https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${encodeURIComponent(name)}&lang=pt`
+                        `https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${name}&lang=pt`
                     );
 
                     if (!response.ok) {
