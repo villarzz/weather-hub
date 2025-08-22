@@ -1,6 +1,5 @@
 import Home from "./pages/Home";
 import Footer from "./components/footer";
-import { Analytics } from '@vercel/analytics/next';
 import { WeatherProvider } from "./context/WeatherProvider";
 
 export default function App() {
@@ -10,7 +9,6 @@ export default function App() {
         <Home />
       </WeatherProvider>
       <Footer />
-      <Analytics />
     </div>
   );
 }
