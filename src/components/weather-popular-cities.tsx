@@ -24,6 +24,7 @@ export default function WeatherPopularCities() {
     const conditionIcons: Record<string, string> = {
         "Parcialmente nublado": partlyCloudy,
         "Possibilidade de chuva irregular": partlyCloudy,
+        "Encoberto": partlyCloudy,
         "Sol": sunny,
         "Céu limpo": sunny,
         "Rain": rainy,
