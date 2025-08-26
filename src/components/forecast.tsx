@@ -29,13 +29,9 @@ export default function Forecast() {
     const conditionTextDayOne = weatherData.forecast.forecastday[0].day.condition.text;
     const conditionTextDayTwo = weatherData.forecast.forecastday[1].day.condition.text;
     const conditionTextDayTheree = weatherData.forecast.forecastday[2].day.condition.text;
-    const conditionTextDayFour = weatherData.forecast.forecastday[3].day.condition.text;
-    const conditionTextDayFive = weatherData.forecast.forecastday[4].day.condition.text;
     const weatherIconDayOne = conditionIcons[conditionTextDayOne];
     const weatherIconDayTwo = conditionIcons[conditionTextDayTwo];
     const weatherIconDayTheree = conditionIcons[conditionTextDayTheree];
-    const weatherIconDayFour = conditionIcons[conditionTextDayFour];
-    const weatherIconDayFive = conditionIcons[conditionTextDayFive];
 
     return (
         <div className="h-[450px] rounded-xl bg-sky-900/50 p-5 flex flex-col">
@@ -43,35 +39,31 @@ export default function Forecast() {
                 <p className="text-zinc-100 text-lg font-semibold">Previsões</p>
                 <div className="border border-zinc-100/50 mt-2"></div>
             </div>
-            <table className="table-auto border-collapse w-full">
-                <tbody>
-                    <tr>
-                        <td className="p-2"><img src={weatherIconDayOne} width={50} /></td>
-                        <td className="text-zinc-100 p-2">{Math.floor(weatherData.forecast.forecastday[0].day.maxtemp_c)}°/{Math.floor(weatherData.forecast.forecastday[0].day.mintemp_c)}°</td>
-                        <td className="text-zinc-100 p-2 whitespace-nowrap text-center">{formatarDataEHora(weatherData.forecast.forecastday[0].date)}</td>
-                    </tr>
-                    <tr>
-                        <td className="text-zinc-100 p-2"><img src={weatherIconDayTwo} width={50} /></td>
-                        <td className="text-zinc-100 p-2">{Math.floor(weatherData.forecast.forecastday[1].day.maxtemp_c)}°/{Math.floor(weatherData.forecast.forecastday[1].day.mintemp_c)}°</td>
-                        <td className="text-zinc-100 p-2 whitespace-nowrap text-center">{formatarDataEHora(weatherData.forecast.forecastday[1].date)}</td>
-                    </tr>
-                    <tr>
-                        <td className="text-zinc-100 p-2"><img src={weatherIconDayTheree} width={50} /></td>
-                        <td className="text-zinc-100 p-2">{Math.floor(weatherData.forecast.forecastday[2].day.maxtemp_c)}°/{Math.floor(weatherData.forecast.forecastday[2].day.mintemp_c)}°</td>
-                        <td className="text-zinc-100 p-2 whitespace-nowrap text-center">{formatarDataEHora(weatherData.forecast.forecastday[2].date)}</td>
-                    </tr>
-                    <tr>
-                        <td className="text-zinc-100 p-2"><img src={weatherIconDayFour} width={50} /></td>
-                        <td className="text-zinc-100 p-2">{Math.floor(weatherData.forecast.forecastday[3].day.maxtemp_c)}°/{Math.floor(weatherData.forecast.forecastday[3].day.mintemp_c)}°</td>
-                        <td className="text-zinc-100 p-2 whitespace-nowrap text-center">{formatarDataEHora(weatherData.forecast.forecastday[3].date)}</td>
-                    </tr>
-                    <tr>
-                        <td className="text-zinc-100 p-2"><img src={weatherIconDayFive} width={50} /></td>
-                        <td className="text-zinc-100 p-2">{Math.floor(weatherData.forecast.forecastday[4].day.maxtemp_c)}°/{Math.floor(weatherData.forecast.forecastday[4].day.mintemp_c)}°</td>
-                        <td className="text-zinc-100 p-2 whitespace-nowrap text-center">{formatarDataEHora(weatherData.forecast.forecastday[4].date)}</td>
-                    </tr>
-                </tbody>
-            </table>
+            <ul className="w-full flex flex-col justify-evenly h-full">
+                <li className="flex items-center justify-between p-2">
+                    <img src={weatherIconDayOne} width={50} />
+                    <span className="text-zinc-100">{Math.floor(weatherData.forecast.forecastday[0].day.maxtemp_c)}°/{Math.floor(weatherData.forecast.forecastday[0].day.mintemp_c)}°</span>
+                    <span className="text-zinc-100 whitespace-nowrap text-center">
+                        {formatarDataEHora(weatherData.forecast.forecastday[0].date)}
+                    </span>
+                </li>
+
+                <li className="flex items-center justify-between p-2">
+                    <img src={weatherIconDayTwo} width={50} />
+                    <span className="text-zinc-100">{Math.floor(weatherData.forecast.forecastday[1].day.maxtemp_c)}°/{Math.floor(weatherData.forecast.forecastday[1].day.mintemp_c)}°</span>
+                    <span className="text-zinc-100 whitespace-nowrap text-center">
+                        {formatarDataEHora(weatherData.forecast.forecastday[1].date)}
+                    </span>
+                </li>
+
+                <li className="flex items-center justify-between p-2">
+                    <img src={weatherIconDayTheree} width={50} />
+                    <span className="text-zinc-100">{Math.floor(weatherData.forecast.forecastday[2].day.maxtemp_c)}°/{Math.floor(weatherData.forecast.forecastday[2].day.mintemp_c)}°</span>
+                    <span className="text-zinc-100 whitespace-nowrap text-center">
+                        {formatarDataEHora(weatherData.forecast.forecastday[2].date)}
+                    </span>
+                </li>
+            </ul>
         </div>
     )
 }
