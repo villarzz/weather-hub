@@ -25,6 +25,7 @@ export default function CurrentWeather() {
         "Neblina": PartlyCloudy,
         "Sol": Sunny,
         "Rain": Rainy,
+        "Chuva moderada ou forte com trovoada": RainThunder,
         "Possibilidade de chuva irregular": Rainy,
         "Snowy": Snowy,
         "RainThunder": RainThunder
