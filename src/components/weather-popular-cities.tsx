@@ -30,6 +30,7 @@ export default function WeatherPopularCities() {
         "Céu limpo": sunny,
         "Rain": rainy,
         "Chuva moderada ou forte com trovoada": rainy,
+        "Chuva fraca": rainy,
         "Snowy": snowy,
         "RainThunder": rainThunder
     };
